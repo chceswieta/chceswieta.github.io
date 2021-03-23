@@ -210,9 +210,6 @@ code {
 }
 
 @media only screen and (min-width:1024px) {
-    .expanding-section {
-        pointer-events: none;
-    }
     .expanding-section .hiding,
     .hiding-tablet {
         display: flex;
