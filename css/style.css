@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&family=Calistoga&family=Roboto+Mono:wght@500&display=swap');
+:root {
+    --main: #425c44;
+    --back: #f0e9e2;
+    --accent: #ecd4cc;
+    --dark: #3b3b3d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--back);
+    color: var(--main);
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    margin: 0;
+}
+
+nav {
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 0;
+    font-size: 1.75rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section a {
+    font-style: italic;
+}
+
+.hiding,
+.hiding-tablet {
+    display: none;
+}
+
+.expanding-checkbox {
+    display: none;
+}
+
+.expanding-checkbox:checked~.hiding {
+    display: block;
+}
+
+.menu-items {
+    list-style-position: outside;
+    font-size: 1.25rem;
+    padding-left: 1.75rem;
+    margin: 0.5rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-family: 'Calistoga', serif;
+    font-weight: 500;
+}
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.content>section {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100%;
+    background-color: var(--accent);
+    border: 0.2rem var(--main) solid;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.photo-section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.photo-section>img {
+    border: 0.2rem var(--main) solid;
+    background-color: var(--main);
+    width: 85%;
+}
+
+.transparent-pic {
+    border: none;
+    background-color: transparent;
+}
+
+.photoset {
+    flex-flow: row wrap;
+    margin: 0;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.photoset>img {
+    width: 25%;
+    object-fit: contain;
+}
+
+.text {
+    padding: 1.25rem 0.5rem;
+    margin: 0;
+}
+
+.short-description {
+    padding-bottom: 0;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--back);
+    background-color: var(--dark);
+    padding: 0.15rem;
+    border-radius: 0.2rem;
+}
+
+.text-with-code {
+    line-height: 1.5rem;
+}
+
+.code-fragment {
+    flex-grow: 1;
+    background-color: var(--dark);
+    padding: 0 1.25rem;
+    font-size: 0.85rem;
+    border-radius: 0.25rem;
+    margin: 0;
+}
+
+.repo-link {
+    padding: 1.25rem 0.5rem;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width:650px) {
+    nav {
+        padding: 0;
+        margin: 0;
+    }
+    nav label {
+        display: none;
+    }
+    .menu-items {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        border-bottom: 0.2rem var(--main) solid;
+        padding: 0;
+    }
+    .menu-items>* {
+        margin: 1rem;
+    }
+    header {
+        min-width: 100%;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .content {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .expanding-checkbox:checked~.hiding-tablet {
+        display: flex;
+    }
+    .content>section {
+        flex-basis: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content>.photo-section {
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .photo-section>img {
+        width: 45%;
+        margin-right: 1rem;
+    }
+    .photo-section>.text {
+        padding-top: 0;
+        width: 65%;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .expanding-section {
+        pointer-events: none;
+    }
+    .expanding-section .hiding,
+    .hiding-tablet {
+        display: flex;
+    }
+    .expanding-triangle {
+        display: none;
+    }
+    .project>:nth-last-child(2) {
+        flex-grow: 1;
+    }
+    .content>.half-wide {
+        flex-basis: 48%;
+    }
+    .columns {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .columns>* {
+        flex-basis: 48%;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+    <link class="codestyle" rel="stylesheet" href="css/codestyle.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <title>Projects</title>
+</head>
+
+<body>
+    <nav>
+        <label for="menu-toggle">&#9776;</label>
+        <input type="checkbox" id="menu-toggle" class="expanding-checkbox">
+
+        <ul class="menu-items hiding">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="interests.html">Interests</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="content">
+            <header>
+                <h1>My projects</h1>
+            </header>
+
+            <section class="expanding-section project half-wide">
+                <h2><label for="proj2-wrap">
+                    <span class="expanding-triangle">&blacktriangledown;</span> Compiler
+                </label></h2>
+
+                <input type="checkbox" id="proj2-wrap" class="expanding-checkbox">
+                <p class="text short-description">
+                    Developed as a part of a Formal Languages and Compiler Design course.
+                </p>
+                <p class="text hiding">
+                    The aim was to parse and translate a simple imperative language into assembly code. It was very enlightening to gain intuition about how programming languages are created. I was glad to have an opportunity to brush up on assembly programming while writing
+                    code for conditional statements, loops, and arithmetical operations.
+                </p>
+                <figure class="code-fragment hiding-tablet">
+                    <pre><code class="python">
+def generate_const(self, const, reg):
+  self.code.append(f"RESET {reg}")
+  if const > 0:
+    bits = bin(const)[2:]
+    for bit in bits[:-1]:
+      if bit == '1':
+        self.code.append(f"INC {reg}")
+      self.code.append(f"SHL {reg}")
+    if bits[-1] == '1':
+      self.code.append(f"INC {reg}")
+                        </code></pre>
+                </figure>
+                <p class="repo-link hiding">
+                    <a href="https://github.com/chceswieta/kompilator" target="_blank">
+                        Check out the project's repository
+                    </a>
+                </p>
+            </section>
+
+            <section class="expanding-section project half-wide">
+                <h2><label for="proj1-wrap">
+                    <span class="expanding-triangle">&blacktriangledown;</span> Age of Divisiveness
+                </label></h2>
+
+                <input type="checkbox" id="proj1-wrap" class="expanding-checkbox">
+                <p class="short-description text">
+                    A Civilization-inspired strategy game with LAN multiplayer developed as a university group project.
+                </p>
+
+                <p class="text hiding">
+                    I was fully responsible for creating the game's user interface, including an interactive world map with tiles, units, and cities. It was nice to work on my pixel art skills while creating sprites. I also contributed to the game logic, where I got to utilise
+                    some algorithmic knowledge. I love these moments in game development where an abstract algorithm comes in handy, so using breadth-first search for determining a unit's move range was very satisfying.
+                </p>
+                <figure class="photoset hiding-tablet">
+                    <img src="img/city1.png" class="transparent-pic" alt="A slavic-inspired city sprite from the game." />
+                    <img src=" img/city2.png " class="transparent-pic" alt="A japanese-inspired city sprite from the game." />
+                    <img src="img/city3.png " class="transparent-pic" alt="An aztec-inspired city sprite from the game." />
+                    <img src="img/city4.png " class="transparent-pic" alt="A viking-inspired city sprite from the game." />
+                </figure>
+                <p class="repo-link hiding">
+                    <a href="https://github.com/chceswieta/age-of-divisiveness" target="_blank">
+                            Check out the project's repository
+                    </a>
+                </p>
+
+            </section>
+
+            <section class="expanding-section project half-wide">
+                <h2><label for="proj3-wrap">
+                    <span class="expanding-triangle">&blacktriangledown;</span> Neural Network Music Generator
+                </label></h2>
+
+                <input type="checkbox" id="proj3-wrap" class="expanding-checkbox">
+                <p class="short-description text ">
+                    A small group project aimed to produce midi songs using a neural network.
+                </p>
+
+                <p class="text hiding">
+                    We were all neural network newbies, so the project was a gentle introduction to the subject. I got familiar with the basic concepts around it. My job was to prepare learning sets and turn them into proper input network, which allowed me to learn a bit
+                    about midi files.
+                </p>
+                <p class="repo-link hiding">
+                    <a href="https://github.com/Bananasis/PytonMusic-Inc." target="_blank">
+                    Check out the project's repository
+                    </a>
+                </p>
+            </section>
+
+            <section class="half-wide">
+                <h2>Smaller projects</h2>
+                <p class="short-description text ">
+                    I got to do lots of fun and more manageable things during my college education, many of which can be found on <a href="https://github.com/chceswieta" target="_blank">my Github page</a>. Some examples that I remember fondly include:
+                </p>
+                <ul class="text-with-code">
+                    <li>Implementing <code>printf</code> and <code>scanf</code> functions from scratch in C,</li>
+                    <li>Recreating a simplified Linux shell in C,</li>
+                    <li>A system monitor with a graphical interface written in Bash,</li>
+                    <li>A small MS Paint clone written in Java.</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <small>
+            &copy; Copyright 2021, Patryk Majewski
+        </small>
+    </footer>
+</body>
+
+</html>
