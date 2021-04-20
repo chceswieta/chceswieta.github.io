@@ -1,0 +1,89 @@
+.js {
+    display: none;
+}
+
+#js-hamburger-icon {
+    width: 1.5rem;
+    height: 1.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
+    position: relative;
+}
+
+.js-hamburger-line,
+.js-hamburger-line::before,
+.js-hamburger-line::after {
+    background-color: var(--main);
+    width: 1.5rem;
+    height: 0.2rem;
+    position: absolute;
+}
+
+.js-hamburger-line::before,
+.js-hamburger-line::after {
+    display: block;
+    content: "";
+}
+
+.js-hamburger-line {
+    transition: transform 200ms;
+}
+
+.js-hamburger-line::before {
+    top: -0.5rem;
+    transition: top 200ms 200ms, opacity 200ms;
+}
+
+.js-hamburger-line::after {
+    top: 0.5rem;
+    transition: top 200ms 200ms, transform 200ms;
+}
+
+.is-active>::before,
+.is-active>::after {
+    top: 0rem;
+}
+
+.is-active>::before {
+    opacity: 0;
+    transition: top 200ms, opacity 200ms;
+}
+
+.is-active>::after {
+    transform: rotate(-90deg);
+    transition: top 200ms, transform 200ms 200ms;
+}
+
+.is-active>.js-hamburger-line {
+    transform: rotate(45deg);
+    transition: transform 200ms 200ms;
+}
+
+.js-menu-items {
+    height: 5rem;
+    transition: height 200ms 200ms;
+}
+
+.js-menu-items>* {
+    transition: opacity 150ms 300ms;
+}
+
+.js-hidden {
+    height: 0;
+    transition: height 200ms 200ms;
+}
+
+.js-hidden>* {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 50ms;
+}
+
+@media only screen and (min-width:650px) {
+    .js-menu-items {
+        height: fit-content;
+    }
+    .js-menu-items>* {
+        transition: opacity 0ms;
+    }
+}
